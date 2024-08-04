@@ -1,0 +1,13 @@
+.tiktaktoe {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  // color: #991b1b
+
+  .item {
+    outline: 1px solid lightblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+  }
+}

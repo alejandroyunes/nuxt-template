@@ -1,0 +1,101 @@
+:root {
+  --primary: rgb(14, 39, 68);
+  --primary-soft: rgba(14, 39, 76, 0.9);
+  
+  --secondary: rgb(226, 137, 100);
+  --secondary-soft: rgb(226, 137, 100, 0.7);
+
+  --indigo: #2c3e50;
+  --success: #28a745;
+  --info: #17a2b8;
+  --warning: #ffc107;
+  --danger: #dc3545;
+
+  --white: rgb(255, 255, 255);
+  --white-soft:rgb(182, 181, 181);
+  --white-base: rgb(238, 238, 238);
+
+  --black: rgb(8, 10, 14);
+  --black-soft: rgb(71, 71, 71);
+  --black-base: rgb(92, 91, 91);
+
+  --gray: rgb(70, 70, 70);
+  --gray-soft: rgb(109, 100, 100);
+  --gray-base: rgb(167, 154, 154);
+
+  --blue: rgb(109, 183, 233);
+  --blue-soft: rgb(198, 224, 241);
+  --blue-softer: rgba(2, 173, 230, 0.11);
+
+
+  --box-shadow: 0 20px 20px -20px rgba(0, 0, 0, 0.473), 0 5px 5px -5px rgba(0, 0, 0, 0.02);
+  --box-shadow-soft: 0px 11px 22px -5px rgba(0, 0, 0, .424);
+  --box-shadow-softer: 0px 11px 22px -5px rgba(255, 255, 255, 0.24);
+  --box-shadow-base: 0 0 10px rgba(255, 255, 255, 0.3);
+
+  --box-shadow-card-black: 0 3px 10px rgba(142, 109, 109, 0.2);
+  --box-shadow-card-white: 0 3px 10px rgba(255, 255, 255, 0.2);
+
+  --border: rgb(235, 235, 235);
+
+
+  --max-width: 1280px;
+  --tablet-width: 1024px;
+  --mobile-width: 768px;
+}
+
+:root[data-color-scheme="light"] {
+  --background: var(--white);
+  --background-soft: var(--white-soft);
+  --background-base: var(--white-base);
+
+  --background-opposite: var(--black);
+  --background-opposite-soft: var(--black-soft);
+  --background-opposite-base: var(--black-base);
+
+  --heading: var(--black);
+  --heading-soft: var(--black-soft);
+  --heading-base: var(--black-base);
+
+  --text: var(--black-soft);
+  --text-soft: var(--black-base);
+  --text-base: var(--gray);
+
+  --shadow: var(--box-shadow);
+  --shadow-base: var(--box-shadow-softer);
+  --shadow-card: var( --box-shadow-card-black);
+
+}
+
+:root[data-color-scheme="dark"] {
+  --background: var(--black);
+  --background-soft: var(--black-soft);
+  --background-base: var(--black-base);
+
+  --background-opposite: var(--white);
+  --background-opposite-soft: var(--white-soft);
+  --background-opposite-base: var(--white-base);
+
+  --heading: var(--white);
+  --heading-soft: var(--white-soft);
+  --heading-base: var(--white-base);
+
+  --text: var(--white-soft);
+  --text-soft: var(--white-base);
+  --text-base: var(--gray);
+
+  --shadow: var(--box-shadow-softer);
+  --shadow-base: var(--shadow-base);
+  --shadow-card: var( --box-shadow-card-white);
+
+  // --color-nav-bg: var(--text-dark-1);
+  // --text-logo: var(--white);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  font-weight: normal;
+}

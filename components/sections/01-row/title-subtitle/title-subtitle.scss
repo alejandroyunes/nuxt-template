@@ -1,0 +1,35 @@
+.title-subtitle-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  color: var(--heading);
+  padding: 0 20px;
+  margin-top: 80px;
+  text-align: center;
+
+  .title {
+    font-size: 2rem;
+    color: var(--heading);
+
+    @media (max-width: 756px) {
+      line-height: 2.6rem;
+    }
+  }
+
+  .extra-top-space {
+    padding-top: 40px;
+  }
+
+  .subtitle {
+    display: flex;
+    justify-content: center;
+    font-weight: 300;
+    font-size: 1.2rem;
+    color: var(--text);
+
+    @media (max-width: 756px) {
+      line-height: 1.6rem;
+      padding-top: 16px;
+    }
+  }
+}

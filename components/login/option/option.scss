@@ -1,0 +1,23 @@
+.option {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  margin: 10px 0;
+  transition:
+    color 0s,
+    background-color 0s;
+
+  .line {
+    position: absolute;
+    width: 160px;
+    border-bottom: 1px solid var(--text);
+    top: 14px;
+  }
+
+  .text {
+    background-color: var(--background);
+    padding: 0 8px;
+    z-index: 1;
+    color: var(--background-opposite);
+  }
+}

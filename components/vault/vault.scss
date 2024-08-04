@@ -1,0 +1,138 @@
+.vault-container {
+  overflow-y: auto;
+  height: calc(100vh - 58px);
+  display: flex;
+  gap: 16px;
+
+  &::-webkit-scrollbar {
+    width: 12px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: red;
+    border-radius: 10px;
+  }
+
+  .categories {
+    margin-top: 20px;
+    border-right: 1px solid var(--border);
+
+    .title {
+      display: flex;
+      justify-content: space-between;
+      margin: 10px 14px 10px 10px;
+
+      p {
+        display: flex;
+        align-items: center;
+        font-size: 1.2rem;
+        color: var(--text);
+      }
+
+      .icon-bg {
+        background-color: var(--background-base);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        margin: 0;
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: var(--background-soft);
+        }
+      }
+
+      @media (max-width: 768px) {
+        justify-content: center;
+      }
+    }
+
+    .items {
+      display: contents;
+
+      .accounts {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        padding: 10px;
+        border-radius: 1rem;
+        margin: 12px 8px;
+        box-shadow: var(--shadow-card);
+        &:hover {
+          background-color: var(--background-base);
+        }
+
+        .svg-bg {
+          background-color: var(--blue-soft);
+          height: 50px;
+          width: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-right: 0.7rem;
+          border-radius: 0.9rem;
+
+          .icon {
+            display: flex;
+          }
+          
+          @media (max-width: 768px) {
+            margin-right: 0;
+            height: 40px;
+            width: 40px;
+
+            .icon {
+              svg {
+                width: 20px;
+                height: 20px;
+              }
+            }
+          }
+        }
+
+        .info {
+          height: 50px;
+          line-height: 1.4rem;
+          span {
+            font-weight: 500;
+            font-size: 1.2rem;
+          }
+          p {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+
+  .content-items {
+    margin-right: 20px;
+
+    .main {
+      margin-top: 20px;
+
+      .title {
+        padding: 5px 0;
+        font-size: 1.2rem;
+      }
+
+      .article-title {
+        display: flex;
+        align-items: center;
+        margin: 20px 0 10px;
+        h3 {
+          font-size: 1.5rem;
+        }
+      }
+
+      .description {
+        p {
+          font-size: 1.3rem;
+        }
+      }
+    }
+  }
+}

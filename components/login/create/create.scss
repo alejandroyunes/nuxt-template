@@ -1,0 +1,33 @@
+.email {
+
+  .button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary);
+    color: var(--white);
+    padding: 15px;
+    border-radius: 48px;
+    width: 300px;
+    border: none;
+    cursor: pointer;
+    span {
+      padding-left: 12px;
+      font-size: 1rem;
+    }
+  }
+}
+
+.terms-conditions {
+  font-size: 0.9rem;
+  margin-top: 6px;
+  width: 280px;
+  color: var(--heading);
+  span {
+    color: var(--info);
+  }
+
+  @media (max-width: 768px) {
+    margin-top: 16px;
+  }
+}
