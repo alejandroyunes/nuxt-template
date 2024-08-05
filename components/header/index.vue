@@ -3,26 +3,21 @@ import './header.scss'
 import { ref } from 'vue'
 import { setDarkMode } from '~/utils/utils'
 import Menu from './menu/index.vue'
-import HamburgerVerticalSvg from '~/components/icons/header/HamburgerSvg.vue'
 import SunSvg from '~/components/icons/header/SunSvg.vue'
 import MoonSvg from '~/components/icons/header/MoonSvg.vue'
 import SliderTopNav from '~/components/sliders/top-nav/TopNav.vue'
 import LogInModal from '~/components/modal/log-in/index.vue'
 import ButtonsGlowOn from '~/components/buttons/glow-on/index.vue'
+import HamburgerVerticalSvg from '~/components/icons/header/HamburgerSvg.vue'
 
 const isSliderTopNavOpen = ref<boolean | undefined>(undefined)
 const isLoginModalOpen = ref(false)
 
-const isDarkMode = ref(
-  typeof localStorage !== 'undefined' &&
-  localStorage.getItem('isDarkMode') === 'true'
-)
-
-setDarkMode(isDarkMode.value)
-
+const isDarkMode = ref(false)
 const handleTheme = () => {
-  isDarkMode.value = !isDarkMode.value
-  setDarkMode(isDarkMode.value)
+  const mode = localStorage.getItem("theme") === "light"
+  isDarkMode.value = !mode
+  setDarkMode(!mode)
 }
 
 const toggleSliderTopNav = () => {
@@ -41,7 +36,11 @@ const toggleLoginModal = () => {
     <div class="header">
       <div class="left">
         <NuxtLink to="/" class="logo-container">
-          <NuxtPicture src="/images/logos/logo-0.webp" sizes="100vw xs:48px" alt="Mi Password logo" width="48"
+          <NuxtPicture
+            src="/images/logos/logo-0.webp"
+            sizes="100vw xs:48px"
+            alt="Mi Password logo"
+            width="48"
             height="48" />
           <span class="text-bold">Mi<span class="text-light">Password</span></span>
         </NuxtLink>
@@ -49,15 +48,15 @@ const toggleLoginModal = () => {
 
       <div class="right">
 
-        <div class="dark-mode-icons">
-          <MoonSvg v-if="!isDarkMode" @click="handleTheme" class="icon sun" />
-          <SunSvg v-else @click="handleTheme" class="icon moon" />
-        </div>
+        <ClientOnly>
+          <div class="dark-mode-icons">
+            <MoonSvg v-if="isDarkMode" @click="handleTheme()" class="icon sun" />
+            <SunSvg v-else @click="handleTheme()" class="icon moon" />
+          </div>
+        </ClientOnly>
 
         <Menu :toggleModal="toggleLoginModal" class="desktop-only" />
-
         <ButtonsGlowOn text="Probar" />
-
         <HamburgerVerticalSvg @click="toggleSliderTopNav" class="icon hamburger mobile-only " />
 
         <SliderTopNav
