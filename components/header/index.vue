@@ -14,10 +14,17 @@ const isSliderTopNavOpen = ref<boolean | undefined>(undefined)
 const isLoginModalOpen = ref(false)
 
 const isDarkMode = ref(false)
+
+onMounted(() => {
+  const theme = localStorage.getItem('theme')
+  if(theme === 'dark') {
+    isDarkMode.value = true
+  }
+})
+
 const handleTheme = () => {
-  const mode = localStorage.getItem("theme") === "light"
-  isDarkMode.value = !mode
-  setDarkMode(!mode)
+  isDarkMode.value = !isDarkMode.value
+  setDarkMode(isDarkMode.value)
 }
 
 const toggleSliderTopNav = () => {
@@ -50,7 +57,7 @@ const toggleLoginModal = () => {
 
         <ClientOnly>
           <div class="dark-mode-icons">
-            <MoonSvg v-if="isDarkMode" @click="handleTheme()" class="icon sun" />
+            <MoonSvg v-if="!isDarkMode" @click="handleTheme()" class="icon sun" />
             <SunSvg v-else @click="handleTheme()" class="icon moon" />
           </div>
         </ClientOnly>
