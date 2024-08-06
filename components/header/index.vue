@@ -17,6 +17,7 @@ const isDarkMode = ref(false)
 
 onMounted(() => {
   const theme = localStorage.getItem('theme')
+  
   if(theme === 'dark') {
     isDarkMode.value = true
   }
