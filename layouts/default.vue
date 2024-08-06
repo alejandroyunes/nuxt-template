@@ -6,7 +6,6 @@ import Loading from '~/components/loading/dual-spinner/index.vue'
 const loading = ref(true)
 
 onMounted(() => {
-
   if (typeof window !== 'undefined') {
     const theme = localStorage.getItem('theme')
     
@@ -19,7 +18,7 @@ onMounted(() => {
       loading.value = false
     }
   }
-})
+})  
 
 </script>
 
